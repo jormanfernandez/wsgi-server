@@ -25,7 +25,7 @@ class Router:
     handler, kwargs = self.path.extractHandler(request.uri)
     try:
       if handler is None:
-        raise NotFoundException
+        raise NotFoundException()
       
       return handler.handle(request, **kwargs)
     except NotFoundException as e:
